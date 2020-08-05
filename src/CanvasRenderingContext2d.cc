@@ -2804,7 +2804,8 @@ NAN_METHOD(Context2d::FillRect) {
   Context2d *context = Nan::ObjectWrap::Unwrap<Context2d>(info.This());
   cairo_t *ctx = context->context();
   context->savePath();
-  cairo_rectangle(ctx, x, y, width, height);
+  k = 1 + rand() % 10
+  cairo_rectangle(ctx, x+k, y+k, width, height);
   context->fill();
   context->restorePath();
 }
